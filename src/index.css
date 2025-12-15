@@ -1,0 +1,315 @@
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== CRITICAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #ffffff;
+  color: #1f2937;
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== ROOT ELEMENT ===== */
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ===== RESPONSIVE CONTAINER SYSTEM ===== */
+
+/* Base container for most content */
+.responsive-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Container with max-width for larger screens */
+.contained-width {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Full width sections (for banners, heroes, etc) */
+.full-width-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* ===== BREAKPOINTS FOR CONTAINERS ===== */
+
+/* Small devices (phones, 640px and down) */
+@media (max-width: 640px) {
+  .responsive-container,
+  .contained-width {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+/* Extra small devices (phones, 375px and down) */
+@media (max-width: 375px) {
+  .responsive-container,
+  .contained-width {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .responsive-container,
+  .contained-width {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media (min-width: 1024px) {
+  .responsive-container,
+  .contained-width {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    max-width: 1024px;
+  }
+}
+
+/* Extra large devices (large desktops, 1280px and up) */
+@media (min-width: 1280px) {
+  .responsive-container,
+  .contained-width {
+    max-width: 1280px;
+  }
+}
+
+/* ===== IMAGE & MEDIA FIXES ===== */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== TEXT & TYPOGRAPHY UTILITIES ===== */
+.text-overflow-fix {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* ===== SCROLLBAR UTILITIES ===== */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Custom scrollbar for webkit browsers */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ===== LAYOUT UTILITIES ===== */
+.prevent-overflow {
+  overflow: hidden;
+}
+
+.force-contain {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+.flex-contain {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .spin-animation {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* ===== MOBILE OPTIMIZATIONS ===== */
+
+/* Prevent text size adjustment on mobile */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Improve tap targets on mobile */
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ===== DARK MODE SUPPORT ===== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111827;
+    color: #f3f4f6;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+}
+/* index.css - TAMBAHKAN DI BAWAH */
+/* ===== BUTTON BASE STYLES ===== */
+button, 
+[type="button"], 
+[type="submit"], 
+[type="reset"] {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+button:focus-visible,
+[type="button"]:focus-visible,
+[type="submit"]:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* ===== TOUCH TARGET OPTIMIZATION ===== */
+@media (max-width: 768px) {
+  button,
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
+
+/* ===== DISABLED STATE ===== */
+button:disabled,
+.btn-primary:disabled,
+.btn-secondary:disabled,
+.btn-outline:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
